@@ -1,0 +1,1647 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix : <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void_ext: <http://ldf.fi/void-ext#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://pcs_graph.example.org/sparql> a :Service;
+  :defaultDataset <https://pcs_graph.example.org/sparql#sparql-default-dataset>;
+  :endpoint <https://pcs_graph.example.org/sparql>;
+  :resultFormat formats:SPARQL_Results_CSV, formats:SPARQL_Results_JSON, formats:N-Triples,
+    formats:RDF_XML, formats:SPARQL_Results_TSV, formats:Turtle, formats:SPARQL_Results_XML;
+  :supportedLanguage :SPARQL11Query;
+  :feature :UnionDefaultGraph, :BasicFederatedQuery;
+  :availableGraphs <file:/mnt/e/BioDataFuse/biohackathon2024/pcs_graph.ttl> .
+
+<https://pcs_graph.example.org/sparql#sparql-default-dataset> a :Dataset;
+  :defaultGraph <https://pcs_graph.example.org/.well-known/void#sparql-default-graph>;
+  :namedGraph <file:/mnt/e/BioDataFuse/biohackathon2024/pcs_graph.ttl> .
+
+<https://pcs_graph.example.org/.well-known/void#sparql-default-graph> a :Graph;
+  void:triples "224157"^^xsd:long;
+  void:distinctObjects "56329"^^xsd:long;
+  void_ext:distinctLiterals "15289"^^xsd:long;
+  void_ext:distinctIRIReferenceObjects "41040"^^xsd:long;
+  void:distinctSubjects "39497"^^xsd:long;
+  void_ext:distinctIRIReferenceSubjects "39432"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "65"^^xsd:long .
+
+<file:/mnt/e/BioDataFuse/biohackathon2024/pcs_graph.ttl> a :NamedGraph;
+  :name <file:/mnt/e/BioDataFuse/biohackathon2024/pcs_graph.ttl>;
+  :graph <https://pcs_graph.example.org/.well-known/void#_graph_pcs_graph.ttl!3c3d0f718c10a715993b672bedbcdbbe> .
+
+<https://pcs_graph.example.org/.well-known/void#_graph_pcs_graph.ttl!3c3d0f718c10a715993b672bedbcdbbe>
+  a :Graph;
+  void:triples "224157"^^xsd:long;
+  void:classes "25"^^xsd:long;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypeProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!89df24df35df8882616112ab6a78df83!Ontology>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8a3a491ee45d085841c18e701acc0a41!WebAPI>;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4936d95e888007b4d7c1a8a7920df9fb!has_gene_template>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f31288f45557f654fc2db4a369bebfa7!created>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e8fc937658bda7beceb6a3c16537508!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_value>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b976e9c50598aba33c17229efcf24451!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespace>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3536baaa80ff04b3c4f7474332e53c5f!first>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6a744d33889cef9e113293f07527191f!rest>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c74e2b735dd8dc85ad0ee3510c33925f!type>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7e72e214b08c0478192cb924f8fdd396!seeAlso>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClass>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example>;
+  void:distinctObjects "15289"^^xsd:long;
+  void_ext:distinctLiterals "15289"^^xsd:long;
+  void:distinctSubjects "65"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "65"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0003674>;
+  void:entities "1327"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "5369"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "5369"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "1327"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "1327"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1328"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0005575>;
+  void:entities "736"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "6013"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "6013"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "736"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "736"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "737"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0008150>;
+  void:entities "4624"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "12053"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "12053"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "4624"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "4624"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4625"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/IAO_0000013>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000628>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d94535db6656df8f720103524bfe7549!IAO_0000013pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C7057>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:entities "2960"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "30066"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!7456be2cad6c2f18601b89d0964995dc!GO_0003674>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0003674>;
+  void:triples "5369"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!0c211670354633079ddb7312cc1ba6cb!GO_0005575>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0005575>;
+  void:triples "6013"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0008150>;
+  void:triples "12053"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/PW_0000001>;
+  void:triples "6631"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1675"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#exactMatch>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:entities "1285"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!378380125fb6890f276e0e5ccfc3c673!NCIT_C17021pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C18469>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:entities "268"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "309"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "309"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "49"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "49"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "268"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "268"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "268"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "268"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "268"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#exactMatch>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>;
+  void:triples "381"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "381"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C18469>;
+  void:entities "1285"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bcf73eb079f5d0d0b19a52f018f7ac86!NCIT_C18469pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C25338>;
+  void:triples "1285"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C25338>;
+  void:entities "8935"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_value> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_value>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/has_value>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_valuepcs_graph.ttl!018c8a13e573859883274351d92b8129!double>;
+  void:triples "8935"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_valuepcs_graph.ttl!018c8a13e573859883274351d92b8129!double>
+  a void:Dataset;
+  void_ext:datatype xsd:double .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C7057>;
+  void:entities "2915"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2915"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#closeMatch>;
+  void:triples "20001"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/OAE_0000001>;
+  void:entities "1641"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>;
+  void:triples "4217"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248pcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:triples "4113"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "104"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!58923839d7b12eb116d9df9de69f702f!OAE_0000001pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1641"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/PW_0000001>;
+  void:entities "1847"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "6631"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "6631"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "3694"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "3001"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!090d9d57358357a4b98b86cdef65917a!PW_0000001pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1847"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:entities "5"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "5"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000983>;
+  void:entities "9119"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>;
+  void:triples "7650"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216pcs_graph.ttl!ca0b7ca4b8c9428d63645485fe1140b7!NCIT_C25338>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C25338>;
+  void:triples "7650"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "9119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "9119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000628>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>;
+  void:triples "18238"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "9119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f083253e7d2814aa4552a9d2da96c75a!SIO_000983pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628pcs_graph.ttl!062d77463f908afcb50ce74229e85f37!NCIT_C7057>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C7057>;
+  void:triples "9119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:entities "750"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "191"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "191"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "22"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "22"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "178"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "178"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "177"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "177"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "751"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#exactMatch>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>;
+  void:triples "765"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!b937e5d2b537f84d20ee8825e253a03b!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:triples "381"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatchpcs_graph.ttl!10162b121a108dc6d0323e5e291c6898!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "384"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:entities "14"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:entities "35"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b976e9c50598aba33c17229efcf24451!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespace>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "15"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!description>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/description>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "5"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>;
+  void:triples "119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028pcs_graph.ttl!4606947e4778b492aca9d85417f9fcf5!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "119"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253pcs_graph.ttl!704f9700a1b47e10a0817160fadc2433!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b976e9c50598aba33c17229efcf24451!description>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#description>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b976e9c50598aba33c17229efcf24451!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b976e9c50598aba33c17229efcf24451!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespace>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespacepcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespacepcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!idpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!idpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "5"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "28"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "20"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!1ca93c070cae8a59512cc8676a780fcd!GO_0008150>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/GO_0008150>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "13"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfpcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "7"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#disjointWith>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#equivalentClass>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasspcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasspcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasspcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasspcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#intersectionOf>;
+  void:triples "9"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#unionOf>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Classpcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#closeMatch>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatchpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatchpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypeProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/subset>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#FunctionalProperty>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/subset>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:entities "13"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!7e72e214b08c0478192cb924f8fdd396!seeAlso>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115pcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!description>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/description>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "8"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!abcbc6c65cb325168fe715e373960e7c!creator>
+  a void:Dataset;
+  void:property dcterms:creator;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "7"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/equivalentTo>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTopcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTopcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/subset>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "8"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domain>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domainpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domainpcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "8"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "13"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!range>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!rangepcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!rangepcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!7e72e214b08c0478192cb924f8fdd396!seeAlso>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ReflexiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#example>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!examplepcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!examplepcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!89df24df35df8882616112ab6a78df83!Ontology>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Ontology>;
+  void:entities "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ReflexiveProperty>;
+  void:entities "2"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/equivalentTo>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTopcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/subset>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ReflexiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexivePropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#example>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!examplepcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:entities "31"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClass>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClass>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#onClass>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClasspcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClasspcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onProperty>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#onProperty>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypeProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "31"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!9e6d9eddc19d6811c0a885c828aceb63!DatatypeProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#DatatypeProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#FunctionalProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "29"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ReflexiveProperty>;
+  void:triples "11"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onPropertypcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "13"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#qualifiedCardinality>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinalitypcs_graph.ttl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinalitypcs_graph.ttl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>
+  a void:Dataset;
+  void_ext:datatype xsd:nonNegativeInteger .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#someValuesFrom>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrompcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "30"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionpcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrompcs_graph.ttl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "28"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:entities "3"^^xsd:long;
+  void:propertyPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example> .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifierpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!descriptionpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/equivalentTo>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTopcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/subset>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subsetpcs_graph.ttl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!labelpcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>,
+    <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!2e3d9909eded822ed6efb70e75a1cddd!ReflexiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ReflexiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOfpcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertypcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#example>;
+  void_ext:datatypePartition <https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!examplepcs_graph.ttl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8a3a491ee45d085841c18e701acc0a41!WebAPI>
+  a void:Dataset;
+  void:class <https://schema.org/WebAPI>;
+  void:entities "6"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void:triples "17"^^xsd:long;
+  void:distinctSubjects "17"^^xsd:long;
+  void:distinctObjects "17"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7a0ffa99c41b812b32e4212b9de05a17!RO_0018027>
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:triples "500"^^xsd:long;
+  void:distinctSubjects "379"^^xsd:long;
+  void:distinctObjects "159"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!a571fb7191829fd86a201d77e3af0c6f!RO_0018029>
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:triples "71"^^xsd:long;
+  void:distinctSubjects "67"^^xsd:long;
+  void:distinctObjects "18"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c091d14a7ce3e95dd66a16a552eece89!description>
+  void:property <http://purl.obolibrary.org/obo/description>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4936d95e888007b4d7c1a8a7920df9fb!has_gene_template>
+  void:property <http://purl.obolibrary.org/obo/pr#has_gene_template>;
+  void:triples "1675"^^xsd:long;
+  void:distinctSubjects "1675"^^xsd:long;
+  void:distinctObjects "1675"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!38e1536b72babc1a393bbfc37d7a86eb!description>
+  void:property <http://purl.org/dc/elements/1.1/description>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bee9e5e3caedb0bf1b31da9b41c47157!identifier>
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void:triples "14"^^xsd:long;
+  void:distinctSubjects "14"^^xsd:long;
+  void:distinctObjects "14"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f31288f45557f654fc2db4a369bebfa7!created>
+  void:property dcterms:created;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!abcbc6c65cb325168fe715e373960e7c!creator>
+  void:property dcterms:creator;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!feda1d30c2a4aaf5aebe979e5a0810da!description>
+  void:property dcterms:description;
+  void:triples "10"^^xsd:long;
+  void:distinctSubjects "10"^^xsd:long;
+  void:distinctObjects "10"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!9e8fc937658bda7beceb6a3c16537508!identifier>
+  void:property dcterms:identifier;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!e4676fce1551f20c4694abb39b8babe5!SIO_000028>
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:triples "30066"^^xsd:long;
+  void:distinctSubjects "8534"^^xsd:long;
+  void:distinctObjects "1406"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b5e0467e4f0b8e26b7ab6a633aece142!SIO_000068>
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:triples "54826"^^xsd:long;
+  void:distinctSubjects "4034"^^xsd:long;
+  void:distinctObjects "9819"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ed5d85a2b904abada4755e68637defcc!SIO_000216>
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:triples "8935"^^xsd:long;
+  void:distinctSubjects "8935"^^xsd:long;
+  void:distinctObjects "8935"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!51025b81cdda7da2edee0cefd3c2fdd1!SIO_000248>
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:triples "4217"^^xsd:long;
+  void:distinctSubjects "1641"^^xsd:long;
+  void:distinctObjects "209"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!123952613f1d19789212b61aa365c7ef!SIO_000253>
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:triples "19946"^^xsd:long;
+  void:distinctSubjects "18099"^^xsd:long;
+  void:distinctObjects "7"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c507df480041bd9bfdda0d109adcaaac!SIO_000300>
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:triples "445"^^xsd:long;
+  void:distinctSubjects "445"^^xsd:long;
+  void:distinctObjects "4"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!fc14796d4240785f3566d3308e41c610!SIO_000628>
+  void:property <http://semanticscience.org/resource/SIO_000628>;
+  void:triples "18239"^^xsd:long;
+  void:distinctSubjects "9120"^^xsd:long;
+  void:distinctObjects "4498"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!f0c840f7d640344d1a3a3d39aed0d7a6!equivalentTo>
+  void:property <http://semanticscience.org/resource/equivalentTo>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!74dc2c53bea612206704112bcf17fa43!has_value>
+  void:property <http://semanticscience.org/resource/has_value>;
+  void:triples "8935"^^xsd:long;
+  void:distinctSubjects "8935"^^xsd:long;
+  void:distinctObjects "14"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cd58d04be2ae4f2e9af2e92d80702506!subset>
+  void:property <http://semanticscience.org/resource/subset>;
+  void:triples "12"^^xsd:long;
+  void:distinctSubjects "6"^^xsd:long;
+  void:distinctObjects "5"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b976e9c50598aba33c17229efcf24451!description>
+  void:property <http://www.geneontology.org/formats/oboInOwl#description>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!333344f3ff93c44e0bdbafccc2a77dbd!hasOBONamespace>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!3536baaa80ff04b3c4f7474332e53c5f!first>
+  void:property rdf:first;
+  void:triples "24"^^xsd:long;
+  void:distinctSubjects "24"^^xsd:long;
+  void:distinctObjects "24"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6a744d33889cef9e113293f07527191f!rest>
+  void:property rdf:rest;
+  void:triples "24"^^xsd:long;
+  void:distinctSubjects "24"^^xsd:long;
+  void:distinctObjects "15"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!c74e2b735dd8dc85ad0ee3510c33925f!type>
+  void:property rdf:type;
+  void:triples "37805"^^xsd:long;
+  void:distinctSubjects "37796"^^xsd:long;
+  void:distinctObjects "25"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!d89567f0e7181990b5b1eed210bde428!domain>
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!cdc148f90ae4955b4121e2d059fd9f63!isDefinedBy>
+  void:property <http://www.w3.org/2000/01/rdf-schema#isDefinedBy>;
+  void:triples "14"^^xsd:long;
+  void:distinctSubjects "14"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!4f75ce12336ab89a4edebd807cd62265!label>
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:triples "15828"^^xsd:long;
+  void:distinctSubjects "15824"^^xsd:long;
+  void:distinctObjects "15218"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!578d0880addccde5fe011e3f37571bd7!range>
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!7e72e214b08c0478192cb924f8fdd396!seeAlso>
+  void:property <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:triples "20"^^xsd:long;
+  void:distinctSubjects "15"^^xsd:long;
+  void:distinctObjects "18"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>
+  void:property <http://www.w3.org/2002/07/owl#disjointWith>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>
+  void:property <http://www.w3.org/2002/07/owl#equivalentClass>;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "3"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>
+  void:property <http://www.w3.org/2002/07/owl#intersectionOf>;
+  void:triples "9"^^xsd:long;
+  void:distinctSubjects "9"^^xsd:long;
+  void:distinctObjects "9"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!26363953b14ef4fbc64ba60ef0dd305c!onClass>
+  void:property <http://www.w3.org/2002/07/owl#onClass>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!07fd2e024e94ea9be842e65c1ee71124!onProperty>
+  void:property <http://www.w3.org/2002/07/owl#onProperty>;
+  void:triples "31"^^xsd:long;
+  void:distinctSubjects "31"^^xsd:long;
+  void:distinctObjects "12"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>
+  void:property <http://www.w3.org/2002/07/owl#qualifiedCardinality>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>
+  void:property <http://www.w3.org/2002/07/owl#someValuesFrom>;
+  void:triples "30"^^xsd:long;
+  void:distinctSubjects "30"^^xsd:long;
+  void:distinctObjects "11"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>
+  void:property <http://www.w3.org/2002/07/owl#unionOf>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!93e393b777673f363631f2e489fb8e8b!closeMatch>
+  void:property <http://www.w3.org/2004/02/skos/core#closeMatch>;
+  void:triples "20002"^^xsd:long;
+  void:distinctSubjects "2914"^^xsd:long;
+  void:distinctObjects "15447"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!061414c2f75686e9df4e437dd9bd8b9b!exactMatch>
+  void:property <http://www.w3.org/2004/02/skos/core#exactMatch>;
+  void:triples "2432"^^xsd:long;
+  void:distinctSubjects "2194"^^xsd:long;
+  void:distinctObjects "2194"^^xsd:long .
+
+<https://pcs_graph.example.org/.well-known/void#pcs_graph.ttl!37f90dd249d34d6b2de10c6da0588e47!example>
+  void:property <http://www.w3.org/2004/02/skos/core#example>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .

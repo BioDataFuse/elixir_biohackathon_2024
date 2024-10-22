@@ -1,0 +1,1891 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix : <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void_ext: <http://ldf.fi/void-ext#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://hpo.example.org/sparql> a :Service;
+  :defaultDataset <https://hpo.example.org/sparql#sparql-default-dataset>;
+  :endpoint <https://hpo.example.org/sparql>;
+  :resultFormat formats:SPARQL_Results_CSV, formats:SPARQL_Results_JSON, formats:N-Triples,
+    formats:RDF_XML, formats:SPARQL_Results_TSV, formats:Turtle, formats:SPARQL_Results_XML;
+  :supportedLanguage :SPARQL11Query;
+  :feature :UnionDefaultGraph, :BasicFederatedQuery;
+  :availableGraphs <file:/mnt/e/BioDataFuse/biohackathon2024/hp.owl> .
+
+<https://hpo.example.org/sparql#sparql-default-dataset> a :Dataset;
+  :defaultGraph <https://hpo.example.org/.well-known/void#sparql-default-graph>;
+  :namedGraph <file:/mnt/e/BioDataFuse/biohackathon2024/hp.owl> .
+
+<https://hpo.example.org/.well-known/void#sparql-default-graph> a :Graph;
+  void:triples "897916"^^xsd:long;
+  void:distinctObjects "240684"^^xsd:long;
+  void_ext:distinctLiterals "211494"^^xsd:long;
+  void_ext:distinctIRIReferenceObjects "29190"^^xsd:long;
+  void:distinctSubjects "189306"^^xsd:long;
+  void_ext:distinctIRIReferenceSubjects "31894"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "157412"^^xsd:long .
+
+<file:/mnt/e/BioDataFuse/biohackathon2024/hp.owl> a :NamedGraph;
+  :name <file:/mnt/e/BioDataFuse/biohackathon2024/hp.owl>;
+  :graph <https://hpo.example.org/.well-known/void#_graph_hp.owl!27620395de646055af67b14d26d33dd7> .
+
+<https://hpo.example.org/.well-known/void#_graph_hp.owl!27620395de646055af67b14d26d33dd7>
+  a :Graph;
+  void:triples "897916"^^xsd:long;
+  void:classes "12"^^xsd:long;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!4c7e1d98f9b557728d77169534cf9251!AllDisjointClasses>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiom>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontology>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700>,
+    <https://hpo.example.org/.well-known/void#hp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001>,
+    <https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>,
+    <https://hpo.example.org/.well-known/void#hp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!38e1536b72babc1a393bbfc37d7a86eb!description>,
+    <https://hpo.example.org/.well-known/void#hp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rights>,
+    <https://hpo.example.org/.well-known/void#hp.owl!78b01b16ad71095cc57259e1910cba50!subject>,
+    <https://hpo.example.org/.well-known/void#hp.owl!10a2b68e090fc22a4421947526be1e64!title>,
+    <https://hpo.example.org/.well-known/void#hp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>,
+    <https://hpo.example.org/.well-known/void#hp.owl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!65564f6f7b1dba435467db69f937d93d!date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3494e2ce7122eeac1b765ba1aa7e89f7!license>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypeProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!02bc64d59c1183eb38502d2988dc899d!consider>,
+    <https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespace>,
+    <https://hpo.example.org/.well-known/void#hp.owl!88411b74943302915ec3a208e4341427!hasAlternativeId>,
+    <https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymType>,
+    <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>,
+    <https://hpo.example.org/.well-known/void#hp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relation>,
+    <https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3536baaa80ff04b3c4f7474332e53c5f!first>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6a744d33889cef9e113293f07527191f!rest>,
+    <https://hpo.example.org/.well-known/void#hp.owl!c74e2b735dd8dc85ad0ee3510c33925f!type>,
+    <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://hpo.example.org/.well-known/void#hp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!a797ae225b8ad752190a588420a94a87!annotatedProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSource>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTarget>,
+    <https://hpo.example.org/.well-known/void#hp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecated>,
+    <https://hpo.example.org/.well-known/void#hp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>,
+    <https://hpo.example.org/.well-known/void#hp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>,
+    <https://hpo.example.org/.well-known/void#hp.owl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!87de81509d600ee4d0605089d9b4db39!members>,
+    <https://hpo.example.org/.well-known/void#hp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinality>,
+    <https://hpo.example.org/.well-known/void#hp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClass>,
+    <https://hpo.example.org/.well-known/void#hp.owl!07fd2e024e94ea9be842e65c1ee71124!onProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom>,
+    <https://hpo.example.org/.well-known/void#hp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>,
+    <https://hpo.example.org/.well-known/void#hp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!31c867da45388bc5434f6749ef11e9c0!versionIRI>;
+  void:distinctObjects "211494"^^xsd:long;
+  void_ext:distinctLiterals "211494"^^xsd:long;
+  void:distinctSubjects "157412"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "157412"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4c7e1d98f9b557728d77169534cf9251!AllDisjointClasses>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AllDisjointClasses>;
+  void:entities "2"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!4c7e1d98f9b557728d77169534cf9251!AllDisjointClasseshp.owl!87de81509d600ee4d0605089d9b4db39!members> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4c7e1d98f9b557728d77169534cf9251!AllDisjointClasseshp.owl!87de81509d600ee4d0605089d9b4db39!members>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#members>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:entities "130"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/date>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>;
+  void:triples "3"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>
+  a void:Dataset;
+  void_ext:datatype xsd:dateTime .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>
+  a void:Dataset;
+  void:property dcterms:creator;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "24"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "88"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "88"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AsymmetricProperty>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiom>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Axiom>;
+  void:entities "60860"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypeProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymType>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!a797ae225b8ad752190a588420a94a87!annotatedProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSource>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTarget> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0002581>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581hp.owl!13be789b5fffdc118f154b0b918ff747!boolean>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581hp.owl!13be789b5fffdc118f154b0b918ff747!boolean>
+  a void:Dataset;
+  void_ext:datatype xsd:boolean .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>
+  a void:Dataset;
+  void:property dcterms:contributor;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>
+  a void:Dataset;
+  void:property dcterms:creator;
+  void:triples "11"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypeProperty>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypePropertyhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypePropertyhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#creation_date>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!a072d6925e53f477008d80cf3492e74b!anyURI>,
+    <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "65002"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!a072d6925e53f477008d80cf3492e74b!anyURI>
+  a void:Dataset;
+  void_ext:datatype xsd:anyURI .
+
+<https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymType>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasSynonymType>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymTypehp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "13471"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymTypehp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "13471"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "5"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "247"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!a797ae225b8ad752190a588420a94a87!annotatedProperty>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#annotatedProperty>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!a797ae225b8ad752190a588420a94a87!annotatedPropertyhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "60860"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!a797ae225b8ad752190a588420a94a87!annotatedPropertyhp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "60842"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSource>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#annotatedSource>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>;
+  void:triples "60860"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "60844"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "16"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSourcehp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#SymmetricProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTarget>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#annotatedTarget>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "60860"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!1ca745c9f8b3c9769bd64e64b306d5f2!Axiomhp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "14"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTargethp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:entities "46459"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!65564f6f7b1dba435467db69f937d93d!date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!02bc64d59c1183eb38502d2988dc899d!consider>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!88411b74943302915ec3a208e4341427!hasAlternativeId>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecated>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "27532"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000233>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233hp.owl!a072d6925e53f477008d80cf3492e74b!anyURI>;
+  void:triples "1313"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233hp.owl!a072d6925e53f477008d80cf3492e74b!anyURI>
+  a void:Dataset;
+  void_ext:datatype xsd:anyURI .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0100001>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001hp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "353"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001hp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "5"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0002581>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/creator>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!d8448f7de5238dcdf58a6a729dd44487!creatorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "118"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!d8448f7de5238dcdf58a6a729dd44487!creatorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/date>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>,
+    <https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!datehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4893"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!datehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>
+  a void:Dataset;
+  void:property dcterms:contributor;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4402"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>
+  a void:Dataset;
+  void:property dcterms:creator;
+  void:triples "10924"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!65564f6f7b1dba435467db69f937d93d!date>
+  a void:Dataset;
+  void:property dcterms:date;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!65564f6f7b1dba435467db69f937d93d!datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>;
+  void:triples "311"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!65564f6f7b1dba435467db69f937d93d!datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>
+  a void:Dataset;
+  void_ext:datatype xsd:dateTime .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!02bc64d59c1183eb38502d2988dc899d!consider>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#consider>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!02bc64d59c1183eb38502d2988dc899d!considerhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "94"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!02bc64d59c1183eb38502d2988dc899d!considerhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#creation_date>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>,
+    <https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_datehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "6228"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>
+  a void:Dataset;
+  void_ext:datatype xsd:dateTime .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_datehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!88411b74943302915ec3a208e4341427!hasAlternativeId>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!88411b74943302915ec3a208e4341427!hasAlternativeIdhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "5763"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!88411b74943302915ec3a208e4341427!hasAlternativeIdhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1269"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "45435"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!33ea59bb1f0800689a7146a76db5a73c!decimal>,
+    <https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "42644"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!33ea59bb1f0800689a7146a76db5a73c!decimal>
+  a void:Dataset;
+  void_ext:datatype xsd:decimal .
+
+<https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2323"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "13569"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "21557"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#inSubset>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "10401"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "10401"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "5249"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "31526"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "56509"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "42035"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "14474"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#complementOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOfhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "3"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOfhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecated>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#deprecated>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecatedhp.owl!13be789b5fffdc118f154b0b918ff747!boolean>;
+  void:triples "457"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecatedhp.owl!13be789b5fffdc118f154b0b918ff747!boolean>
+  a void:Dataset;
+  void_ext:datatype xsd:boolean .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#disjointWith>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "275"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "271"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "4"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#equivalentClass>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasshp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasshp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "12850"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasshp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "6598"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClasshp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "6252"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#intersectionOf>;
+  void:triples "14784"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6be100d081a438502013ba4e5fef3db7!Classhp.owl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#unionOf>;
+  void:triples "134"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#FunctionalProperty>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#shorthand>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthandhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthandhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:entities "225"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "156"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>
+  a void:Dataset;
+  void:property dcterms:contributor;
+  void:triples "4"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!abcbc6c65cb325168fe715e373960e7c!creator>
+  a void:Dataset;
+  void:property dcterms:creator;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#creation_date>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_datehp.owl!10c08cb2b733eef75e01e5e0496706c2!dateTime>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "3"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "28"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#inSubset>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "84"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "84"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#shorthand>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthandhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "33"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "57"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "56"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "198"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "53"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "50"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "3"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "187"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#FunctionalProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "187"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#SymmetricProperty>;
+  void:triples "9"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "44"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "36"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "36"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "11"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectPropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#propertyChainAxiom>;
+  void:triples "52"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontology>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Ontology>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!38e1536b72babc1a393bbfc37d7a86eb!description>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rights>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!78b01b16ad71095cc57259e1910cba50!subject>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!10a2b68e090fc22a4421947526be1e64!title>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!3494e2ce7122eeac1b765ba1aa7e89f7!license>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespace>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relation>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!31c867da45388bc5434f6749ef11e9c0!versionIRI> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000700>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700hp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700hp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/creator>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!d8448f7de5238dcdf58a6a729dd44487!creatorhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!38e1536b72babc1a393bbfc37d7a86eb!description>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/description>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!38e1536b72babc1a393bbfc37d7a86eb!descriptionhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!38e1536b72babc1a393bbfc37d7a86eb!descriptionhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rights>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/rights>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rightshp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rightshp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!78b01b16ad71095cc57259e1910cba50!subject>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/subject>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!78b01b16ad71095cc57259e1910cba50!subjecthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!78b01b16ad71095cc57259e1910cba50!subjecthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!10a2b68e090fc22a4421947526be1e64!title>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/title>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!10a2b68e090fc22a4421947526be1e64!titlehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!10a2b68e090fc22a4421947526be1e64!titlehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!3494e2ce7122eeac1b765ba1aa7e89f7!license>
+  a void:Dataset;
+  void:property dcterms:license;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespace>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#default-namespace>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespacehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespacehp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relation>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#logical-definition-view-relation>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relationhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relationhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!89df24df35df8882616112ab6a78df83!Ontologyhp.owl!31c867da45388bc5434f6749ef11e9c0!versionIRI>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#versionIRI>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:entities "43583"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinality>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClass>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOfhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#disjointWith>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>;
+  void:triples "14"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWithhp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restriction>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Restriction>;
+  void:triples "14"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinality>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#minQualifiedCardinality>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinalityhp.owl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinalityhp.owl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>
+  a void:Dataset;
+  void_ext:datatype xsd:nonNegativeInteger .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClass>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#onClass>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClasshp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "48"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClasshp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "48"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onProperty>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#onProperty>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "43583"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!4a79de8578f265800bc4c1e3b090e76c!AsymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AsymmetricProperty>;
+  void:triples "79"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!717e1ac2dd567ad1567ba802cdb67e2a!FunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#FunctionalProperty>;
+  void:triples "5171"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!c012b7ec75460f4fa419f022afb089eb!InverseFunctionalProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#InverseFunctionalProperty>;
+  void:triples "115"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "43583"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#SymmetricProperty>;
+  void:triples "563"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!07fd2e024e94ea9be842e65c1ee71124!onPropertyhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "19782"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#qualifiedCardinality>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinalityhp.owl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>;
+  void:triples "42"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinalityhp.owl!c3f4020af7d4582c59f6acafd4c02408!nonNegativeInteger>
+  a void:Dataset;
+  void_ext:datatype xsd:nonNegativeInteger .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#someValuesFrom>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFromhp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "43535"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!9ed2fb7d3b7985c23e788a879a4db9d7!Restrictionhp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFromhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "43535"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#SymmetricProperty>;
+  void:entities "7"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#inSubset>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "5"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "5"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricPropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#propertyChainAxiom>;
+  void:triples "4"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:entities "30"^^xsd:long;
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115hp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "23"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXrefhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonymhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!idhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#inSubset>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>;
+  void:triples "28"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b34867a066502acd097e5693a38cb2ac!inSubsethp.owl!55439a5d90df8ccad534dc9af3fc4aee!AnnotationProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#AnnotationProperty>;
+  void:triples "28"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>
+  a void:Dataset;
+  void:property <http://www.geneontology.org/formats/oboInOwl#shorthand>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthandhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!commenthp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "4"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domain>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!d89567f0e7181990b5b1eed210bde428!domainhp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  void:propertyPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom> .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>,
+    <https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>;
+  void:triples "34"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!a293c1c4f80b12331668319d522ad018!langString>
+  a void:Dataset;
+  void_ext:datatype rdf:langString .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!labelhp.owl!4e598fd1b2c9ef9bd360334e0ef7610a!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!578d0880addccde5fe011e3f37571bd7!range>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!578d0880addccde5fe011e3f37571bd7!rangehp.owl!6be100d081a438502013ba4e5fef3db7!Class>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#Class>;
+  void:triples "6"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "30"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "30"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!f02d9eba6439d3843194fd02bb1c21a6!SymmetricProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#SymmetricProperty>;
+  void:triples "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "10"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:classPartition <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>,
+    <https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!472ee8b9e92f00863f1b11929967a7fa!ObjectProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#ObjectProperty>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!45a800b10baec898099b0111ebb04f1a!inverseOfhp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitiveProperty>
+  a void:Dataset;
+  void:class <http://www.w3.org/2002/07/owl#TransitiveProperty>;
+  void:triples "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3b46ba4c0adbd1be8c4d87b306c67b25!TransitivePropertyhp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#propertyChainAxiom>;
+  void:triples "8"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!15e3ca396265b3dbaf8788011b6c52a3!IAO_0000115>
+  void:property <http://purl.obolibrary.org/obo/IAO_0000115>;
+  void:triples "27689"^^xsd:long;
+  void:distinctSubjects "27689"^^xsd:long;
+  void:distinctObjects "27685"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!01111ec577bc8797f0ceef125cd25f5e!IAO_0000233>
+  void:property <http://purl.obolibrary.org/obo/IAO_0000233>;
+  void:triples "1313"^^xsd:long;
+  void:distinctSubjects "1295"^^xsd:long;
+  void:distinctObjects "1178"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6198101997808eb71963c900b8db3f04!IAO_0000700>
+  void:property <http://purl.obolibrary.org/obo/IAO_0000700>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!916ac273f7d3e8489f6e099354d10154!IAO_0100001>
+  void:property <http://purl.obolibrary.org/obo/IAO_0100001>;
+  void:triples "353"^^xsd:long;
+  void:distinctSubjects "352"^^xsd:long;
+  void:distinctObjects "318"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8c2497c491e6dd77521042cea31abf2a!RO_0002581>
+  void:property <http://purl.obolibrary.org/obo/RO_0002581>;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!d8448f7de5238dcdf58a6a729dd44487!creator>
+  void:property <http://purl.org/dc/elements/1.1/creator>;
+  void:triples "122"^^xsd:long;
+  void:distinctSubjects "119"^^xsd:long;
+  void:distinctObjects "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!faeeb6444c2ed08c40ecc1880be289ca!date>
+  void:property <http://purl.org/dc/elements/1.1/date>;
+  void:triples "4896"^^xsd:long;
+  void:distinctSubjects "4886"^^xsd:long;
+  void:distinctObjects "4866"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!38e1536b72babc1a393bbfc37d7a86eb!description>
+  void:property <http://purl.org/dc/elements/1.1/description>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!cfac1f9e90cd24d60339c7abfecdb2f3!rights>
+  void:property <http://purl.org/dc/elements/1.1/rights>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!78b01b16ad71095cc57259e1910cba50!subject>
+  void:property <http://purl.org/dc/elements/1.1/subject>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!10a2b68e090fc22a4421947526be1e64!title>
+  void:property <http://purl.org/dc/elements/1.1/title>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!0f80922784ee8e3f59c95c82fb3267ed!contributor>
+  void:property dcterms:contributor;
+  void:triples "4413"^^xsd:long;
+  void:distinctSubjects "2304"^^xsd:long;
+  void:distinctObjects "106"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!abcbc6c65cb325168fe715e373960e7c!creator>
+  void:property dcterms:creator;
+  void:triples "10944"^^xsd:long;
+  void:distinctSubjects "10944"^^xsd:long;
+  void:distinctObjects "13"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!65564f6f7b1dba435467db69f937d93d!date>
+  void:property dcterms:date;
+  void:triples "311"^^xsd:long;
+  void:distinctSubjects "311"^^xsd:long;
+  void:distinctObjects "311"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3494e2ce7122eeac1b765ba1aa7e89f7!license>
+  void:property dcterms:license;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3939ab3beb46c47ad67757fdf6f7d84e!SynonymTypeProperty>
+  void:property <http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!02bc64d59c1183eb38502d2988dc899d!consider>
+  void:property <http://www.geneontology.org/formats/oboInOwl#consider>;
+  void:triples "94"^^xsd:long;
+  void:distinctSubjects "88"^^xsd:long;
+  void:distinctObjects "71"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8ee3a1b606e461219d75b9c08b6185a8!creation_date>
+  void:property <http://www.geneontology.org/formats/oboInOwl#creation_date>;
+  void:triples "6231"^^xsd:long;
+  void:distinctSubjects "6231"^^xsd:long;
+  void:distinctObjects "5146"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6f538b11dbccf1d2675b02a5f71b780a!default-namespace>
+  void:property <http://www.geneontology.org/formats/oboInOwl#default-namespace>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!88411b74943302915ec3a208e4341427!hasAlternativeId>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>;
+  void:triples "5763"^^xsd:long;
+  void:distinctSubjects "2952"^^xsd:long;
+  void:distinctObjects "5763"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7ff2af6f5fc5e3bc27e3a0d31ebe9d7c!hasBroadSynonym>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>;
+  void:triples "1271"^^xsd:long;
+  void:distinctSubjects "887"^^xsd:long;
+  void:distinctObjects "1229"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!e978ba14c3d18454cd8b137a6ef58894!hasDbXref>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasDbXref>;
+  void:triples "110444"^^xsd:long;
+  void:distinctSubjects "73600"^^xsd:long;
+  void:distinctObjects "52872"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!079d1ff46bfef9030842787782bfd94a!hasExactSynonym>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>;
+  void:triples "42646"^^xsd:long;
+  void:distinctSubjects "17677"^^xsd:long;
+  void:distinctObjects "42636"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c8ed4a1e1dd05f6f17e31574ab15e418!hasNarrowSynonym>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>;
+  void:triples "2323"^^xsd:long;
+  void:distinctSubjects "1193"^^xsd:long;
+  void:distinctObjects "2310"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!5052af0ba94fb1a76e790330c1d2baf2!hasRelatedSynonym>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>;
+  void:triples "13572"^^xsd:long;
+  void:distinctSubjects "5524"^^xsd:long;
+  void:distinctObjects "13326"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!5cf8aad03279cf74b40c836c8954d8ad!hasSynonymType>
+  void:property <http://www.geneontology.org/formats/oboInOwl#hasSynonymType>;
+  void:triples "13471"^^xsd:long;
+  void:distinctSubjects "13434"^^xsd:long;
+  void:distinctObjects "17"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!8e84fd7c39cd5a236fb018befa84a09a!id>
+  void:property <http://www.geneontology.org/formats/oboInOwl#id>;
+  void:triples "21585"^^xsd:long;
+  void:distinctSubjects "21585"^^xsd:long;
+  void:distinctObjects "21585"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!b34867a066502acd097e5693a38cb2ac!inSubset>
+  void:property <http://www.geneontology.org/formats/oboInOwl#inSubset>;
+  void:triples "10485"^^xsd:long;
+  void:distinctSubjects "6942"^^xsd:long;
+  void:distinctObjects "71"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7ef2f0cf24466e9f6ed0b1b17b6edcb9!logical-definition-view-relation>
+  void:property <http://www.geneontology.org/formats/oboInOwl#logical-definition-view-relation>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!14ca967035ab5b8b5b344f87e285ad13!shorthand>
+  void:property <http://www.geneontology.org/formats/oboInOwl#shorthand>;
+  void:triples "7"^^xsd:long;
+  void:distinctSubjects "7"^^xsd:long;
+  void:distinctObjects "7"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!3536baaa80ff04b3c4f7474332e53c5f!first>
+  void:property rdf:first;
+  void:triples "38043"^^xsd:long;
+  void:distinctSubjects "38043"^^xsd:long;
+  void:distinctObjects "25170"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6a744d33889cef9e113293f07527191f!rest>
+  void:property rdf:rest;
+  void:triples "38043"^^xsd:long;
+  void:distinctSubjects "38043"^^xsd:long;
+  void:distinctObjects "23070"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!c74e2b735dd8dc85ad0ee3510c33925f!type>
+  void:property rdf:type;
+  void:triples "151300"^^xsd:long;
+  void:distinctSubjects "151260"^^xsd:long;
+  void:distinctObjects "12"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!dacf627f3d9075d7c805ce9d42521333!comment>
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void:triples "5290"^^xsd:long;
+  void:distinctSubjects "5290"^^xsd:long;
+  void:distinctObjects "4770"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!d89567f0e7181990b5b1eed210bde428!domain>
+  void:property <http://www.w3.org/2000/01/rdf-schema#domain>;
+  void:triples "57"^^xsd:long;
+  void:distinctSubjects "56"^^xsd:long;
+  void:distinctObjects "21"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4f75ce12336ab89a4edebd807cd62265!label>
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:triples "31995"^^xsd:long;
+  void:distinctSubjects "31988"^^xsd:long;
+  void:distinctObjects "31918"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!578d0880addccde5fe011e3f37571bd7!range>
+  void:property <http://www.w3.org/2000/01/rdf-schema#range>;
+  void:triples "53"^^xsd:long;
+  void:distinctSubjects "53"^^xsd:long;
+  void:distinctObjects "21"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!b6c99360a2925e4b23fcfce8a7a9758f!subClassOf>
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:triples "56510"^^xsd:long;
+  void:distinctSubjects "31061"^^xsd:long;
+  void:distinctObjects "25984"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!b60d90eff3fdb1364aa53c46f4ae9c45!subPropertyOf>
+  void:property <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>;
+  void:triples "275"^^xsd:long;
+  void:distinctSubjects "235"^^xsd:long;
+  void:distinctObjects "82"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!a797ae225b8ad752190a588420a94a87!annotatedProperty>
+  void:property <http://www.w3.org/2002/07/owl#annotatedProperty>;
+  void:triples "60860"^^xsd:long;
+  void:distinctSubjects "60860"^^xsd:long;
+  void:distinctObjects "12"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!803ff9d24948f99553f28b1d1a5bc3e9!annotatedSource>
+  void:property <http://www.w3.org/2002/07/owl#annotatedSource>;
+  void:triples "60860"^^xsd:long;
+  void:distinctSubjects "60860"^^xsd:long;
+  void:distinctObjects "26046"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!4af25175e3ecc4ff22af796180c5f97e!annotatedTarget>
+  void:property <http://www.w3.org/2002/07/owl#annotatedTarget>;
+  void:triples "60860"^^xsd:long;
+  void:distinctSubjects "60860"^^xsd:long;
+  void:distinctObjects "60156"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!960981a9f1fbb4e1d6b5b8c7cc7b564b!complementOf>
+  void:property <http://www.w3.org/2002/07/owl#complementOf>;
+  void:triples "3"^^xsd:long;
+  void:distinctSubjects "3"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!b353b4ca4e77e86a90ea99b91d5a72fa!deprecated>
+  void:property <http://www.w3.org/2002/07/owl#deprecated>;
+  void:triples "457"^^xsd:long;
+  void:distinctSubjects "457"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!863e2c9c6cc230c3b28537eadceeadc7!disjointWith>
+  void:property <http://www.w3.org/2002/07/owl#disjointWith>;
+  void:triples "289"^^xsd:long;
+  void:distinctSubjects "149"^^xsd:long;
+  void:distinctObjects "146"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!bbfcc21aa73d2fe4d87de50a32c9eb86!equivalentClass>
+  void:property <http://www.w3.org/2002/07/owl#equivalentClass>;
+  void:triples "12850"^^xsd:long;
+  void:distinctSubjects "12812"^^xsd:long;
+  void:distinctObjects "12850"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!5bba4b7cd96453bf62b98d7a94658855!intersectionOf>
+  void:property <http://www.w3.org/2002/07/owl#intersectionOf>;
+  void:triples "14784"^^xsd:long;
+  void:distinctSubjects "14784"^^xsd:long;
+  void:distinctObjects "14784"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!45a800b10baec898099b0111ebb04f1a!inverseOf>
+  void:property <http://www.w3.org/2002/07/owl#inverseOf>;
+  void:triples "39"^^xsd:long;
+  void:distinctSubjects "39"^^xsd:long;
+  void:distinctObjects "38"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!87de81509d600ee4d0605089d9b4db39!members>
+  void:property <http://www.w3.org/2002/07/owl#members>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!7841e8d06c4a175d977b8101afe23da9!minQualifiedCardinality>
+  void:property <http://www.w3.org/2002/07/owl#minQualifiedCardinality>;
+  void:triples "6"^^xsd:long;
+  void:distinctSubjects "6"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!26363953b14ef4fbc64ba60ef0dd305c!onClass>
+  void:property <http://www.w3.org/2002/07/owl#onClass>;
+  void:triples "48"^^xsd:long;
+  void:distinctSubjects "48"^^xsd:long;
+  void:distinctObjects "39"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!07fd2e024e94ea9be842e65c1ee71124!onProperty>
+  void:property <http://www.w3.org/2002/07/owl#onProperty>;
+  void:triples "43583"^^xsd:long;
+  void:distinctSubjects "43583"^^xsd:long;
+  void:distinctObjects "155"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!a3b986cb5ecf150bfed633a162d78bde!propertyChainAxiom>
+  void:property <http://www.w3.org/2002/07/owl#propertyChainAxiom>;
+  void:triples "52"^^xsd:long;
+  void:distinctSubjects "39"^^xsd:long;
+  void:distinctObjects "52"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!0b7059f53aabebd1e787f42c0ee6e653!qualifiedCardinality>
+  void:property <http://www.w3.org/2002/07/owl#qualifiedCardinality>;
+  void:triples "42"^^xsd:long;
+  void:distinctSubjects "42"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!ebe63073ca79ba8efcb75ded468563cf!someValuesFrom>
+  void:property <http://www.w3.org/2002/07/owl#someValuesFrom>;
+  void:triples "43535"^^xsd:long;
+  void:distinctSubjects "43535"^^xsd:long;
+  void:distinctObjects "13850"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!6d4c6c115a34d347f6edc77a6e0d8444!unionOf>
+  void:property <http://www.w3.org/2002/07/owl#unionOf>;
+  void:triples "134"^^xsd:long;
+  void:distinctSubjects "134"^^xsd:long;
+  void:distinctObjects "134"^^xsd:long .
+
+<https://hpo.example.org/.well-known/void#hp.owl!31c867da45388bc5434f6749ef11e9c0!versionIRI>
+  void:property <http://www.w3.org/2002/07/owl#versionIRI>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
