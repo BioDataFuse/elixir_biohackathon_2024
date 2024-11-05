@@ -1,0 +1,153 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix : <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void_ext: <http://ldf.fi/void-ext#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://mim2gene_medgen.example.org/sparql> a :Service;
+  :defaultDataset <https://mim2gene_medgen.example.org/sparql#sparql-default-dataset>;
+  :endpoint <https://mim2gene_medgen.example.org/sparql>;
+  :resultFormat formats:SPARQL_Results_CSV, formats:SPARQL_Results_JSON, formats:N-Triples,
+    formats:RDF_XML, formats:SPARQL_Results_TSV, formats:Turtle, formats:SPARQL_Results_XML;
+  :supportedLanguage :SPARQL11Query;
+  :feature :UnionDefaultGraph, :BasicFederatedQuery;
+  :availableGraphs <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/mim2gene_medgen.ttl> .
+
+<https://mim2gene_medgen.example.org/sparql#sparql-default-dataset> a :Dataset;
+  :defaultGraph <https://mim2gene_medgen.example.org/.well-known/void#sparql-default-graph>;
+  :namedGraph <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/mim2gene_medgen.ttl> .
+
+<https://mim2gene_medgen.example.org/.well-known/void#sparql-default-graph> a :Graph;
+  void:triples "95217"^^xsd:long;
+  void:distinctObjects "28474"^^xsd:long;
+  void_ext:distinctLiterals "22"^^xsd:long;
+  void_ext:distinctIRIReferenceObjects "28452"^^xsd:long;
+  void:distinctSubjects "51101"^^xsd:long;
+  void_ext:distinctIRIReferenceSubjects "43817"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "7284"^^xsd:long .
+
+<file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/mim2gene_medgen.ttl>
+  a :NamedGraph;
+  :name <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/mim2gene_medgen.ttl>;
+  :graph <https://mim2gene_medgen.example.org/.well-known/void#_graph_mim2gene_medgen.ttl!a449af4e> .
+
+<https://mim2gene_medgen.example.org/.well-known/void#_graph_mim2gene_medgen.ttl!a449af4e>
+  a :Graph;
+  void:triples "95217"^^xsd:long;
+  void:classes "1"^^xsd:long;
+  void:classPartition <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statement>;
+  void:propertyPartition <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!d0be00ff!mim_type>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!5d346425!RO_0003302>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0db2db6b!source>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!da973d4e!object>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0b8fe80b!predicate>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!94b3065a!subject>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!c74e2b73!type>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!dacf627f!comment>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!7e72e214!seeAlso>;
+  void:distinctObjects "22"^^xsd:long;
+  void_ext:distinctLiterals "22"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void_ext:distinctBlankNodeSubjects "7284"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statement>
+  a void:Dataset;
+  void:class rdf:Statement;
+  void:entities "7284"^^xsd:long;
+  void:propertyPartition <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!0db2db6b!source>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!da973d4e!object>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!0b8fe80b!predicate>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!94b3065a!subject>,
+    <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!dacf627f!comment> .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!0db2db6b!source>
+  a void:Dataset;
+  void:property dcterms:source;
+  void_ext:datatypePartition <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0db2db6b!sourcemim2gene_medgen.ttl!4e598fd1!string>;
+  void:triples "7687"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0db2db6b!sourcemim2gene_medgen.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!da973d4e!object>
+  a void:Dataset;
+  void:property rdf:object;
+  void:triples "7284"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!0b8fe80b!predicate>
+  a void:Dataset;
+  void:property rdf:predicate;
+  void:triples "7284"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!94b3065a!subject>
+  a void:Dataset;
+  void:property rdf:subject;
+  void:triples "7284"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!afab0dea!Statementmim2gene_medgen.ttl!dacf627f!comment>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void_ext:datatypePartition <https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!dacf627f!commentmim2gene_medgen.ttl!4e598fd1!string>;
+  void:triples "7284"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!dacf627f!commentmim2gene_medgen.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!d0be00ff!mim_type>
+  void:property <http://med2rdf/ontology/medgen#mim_type>;
+  void:triples "26841"^^xsd:long;
+  void:distinctSubjects "26841"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!5d346425!RO_0003302>
+  void:property <http://purl.obolibrary.org/obo/RO_0003302>;
+  void:triples "7281"^^xsd:long;
+  void:distinctSubjects "4909"^^xsd:long;
+  void:distinctObjects "6553"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0db2db6b!source>
+  void:property dcterms:source;
+  void:triples "7687"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "5"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!da973d4e!object>
+  void:property rdf:object;
+  void:triples "7284"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "6553"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!0b8fe80b!predicate>
+  void:property rdf:predicate;
+  void:triples "7284"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!94b3065a!subject>
+  void:property rdf:subject;
+  void:triples "7284"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "4909"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!c74e2b73!type>
+  void:property rdf:type;
+  void:triples "7284"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!dacf627f!comment>
+  void:property <http://www.w3.org/2000/01/rdf-schema#comment>;
+  void:triples "7284"^^xsd:long;
+  void:distinctSubjects "7284"^^xsd:long;
+  void:distinctObjects "15"^^xsd:long .
+
+<https://mim2gene_medgen.example.org/.well-known/void#mim2gene_medgen.ttl!7e72e214!seeAlso>
+  void:property <http://www.w3.org/2000/01/rdf-schema#seeAlso>;
+  void:triples "16988"^^xsd:long;
+  void:distinctSubjects "16975"^^xsd:long;
+  void:distinctObjects "16988"^^xsd:long .

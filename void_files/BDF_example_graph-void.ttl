@@ -1,0 +1,1006 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix : <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void_ext: <http://ldf.fi/void-ext#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://BDF_example_graph.example.org/sparql> a :Service;
+  :defaultDataset <https://BDF_example_graph.example.org/sparql#sparql-default-dataset>;
+  :endpoint <https://BDF_example_graph.example.org/sparql>;
+  :resultFormat formats:SPARQL_Results_CSV, formats:SPARQL_Results_JSON, formats:N-Triples,
+    formats:RDF_XML, formats:SPARQL_Results_TSV, formats:Turtle, formats:SPARQL_Results_XML;
+  :supportedLanguage :SPARQL11Query;
+  :feature :UnionDefaultGraph, :BasicFederatedQuery;
+  :availableGraphs <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/sparql#sparql-default-dataset> a :Dataset;
+  :defaultGraph <https://BDF_example_graph.example.org/.well-known/void#sparql-default-graph>;
+  :namedGraph <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#sparql-default-graph> a :Graph;
+  void:triples "196146"^^xsd:long;
+  void:distinctObjects "28833"^^xsd:long;
+  void_ext:distinctLiterals "666"^^xsd:long;
+  void_ext:distinctIRIReferenceObjects "28167"^^xsd:long;
+  void:distinctSubjects "28154"^^xsd:long;
+  void_ext:distinctIRIReferenceSubjects "28154"^^xsd:long .
+
+<file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl>
+  a :NamedGraph;
+  :name <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl>;
+  :graph <https://BDF_example_graph.example.org/.well-known/void#_graph_BDF_example_graph.ttl!54b6672c> .
+
+<https://BDF_example_graph.example.org/.well-known/void#_graph_BDF_example_graph.ttl!54b6672c>
+  a :Graph;
+  void:triples "196146"^^xsd:long;
+  void:classes "15"^^xsd:long;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!357839ca!CHEMINF_000406>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!5c2f97ea!CHEMINF_000407>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!602ad451!GO_0032410>;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!7a0ffa99!RO_0018027>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!a571fb71!RO_0018029>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8c536369!inchi>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!336862c8!smiles>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4936d95e!has_gene_template>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bee9e5e3!identifier>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!88e66dd5!CHEMINF_000140>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!e4676fce!SIO_000028>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b5e0467e!SIO_000068>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ed5d85a2!SIO_000216>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!39ae1a62!SIO_000229>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!aea42a32!SIO_000230>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!51025b81!SIO_000248>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c507df48!SIO_000300>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!a4053c1f!SIO_000671>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!e58b428f!SIO_001403>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c74e2b73!type>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!label>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b6c99360!subClassOf>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4534900f!sameAs>;
+  void:distinctObjects "666"^^xsd:long;
+  void_ext:distinctLiterals "666"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:entities "6"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!ed5d85a2!SIO_000216>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!39ae1a62!SIO_000229>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!090d9d57!PW_0000001>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:triples "191"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!090d9d57!PW_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/PW_0000001>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!8e95dc80!EFO_0002694>
+  a void:Dataset;
+  void:class <http://www.ebi.ac.uk/efo/EFO_0002694>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_c5746711> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000068>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_81e12647> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000068>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!ed5d85a2!SIO_000216>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!ed5d85a2!SIO_000216BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!ed5d85a2!SIO_000216BDF_example_graph.ttl!86cca58f!SIO_001077>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001077>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_670c8c32> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000216>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!39ae1a62!SIO_000229>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000229>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!39ae1a62!SIO_000229BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!39ae1a62!SIO_000229BDF_example_graph.ttl!86cca58f!SIO_001077>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001077>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_b5c45243> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000229>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:entities "13"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4936d95e!has_gene_template>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!e4676fce!SIO_000028>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!a4053c1f!SIO_000671>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4936d95e!has_gene_template>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/pr#has_gene_template>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4936d95e!has_gene_templateBDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4936d95e!has_gene_templateBDF_example_graph.ttl!4606947e!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_59175a47> a void:Linkset;
+  void:linkPredicate <http://purl.obolibrary.org/obo/pr#has_gene_template>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!e4676fce!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!090d9d57!PW_0000001>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!602ad451!GO_0032410>;
+  void:triples "40"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C18469>;
+  void:triples "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!090d9d57!PW_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/PW_0000001>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!b5e0467e!SIO_000068BDF_example_graph.ttl!602ad451!GO_0032410>
+  a void:Dataset;
+  void:class <https://purl.obolibrary.org/GO_0032410>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_cc29cd81> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000068>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_74e7ed44> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000068>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_6d25b162> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000068>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!602ad451!GO_0032410>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!a4053c1f!SIO_000671>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000671>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!a4053c1f!SIO_000671BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!a4053c1f!SIO_000671BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_173eb16e> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000671>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!bcf73eb0!NCIT_C18469>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "10"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!bcf73eb0!NCIT_C18469>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C18469>;
+  void:triples "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_b034ff23> a void:Linkset;
+  void:linkPredicate <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:entities "35"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!7a0ffa99!RO_0018027>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!a571fb71!RO_0018029>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!51025b81!SIO_000248>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!c507df48!SIO_000300>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4f75ce12!label>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4534900f!sameAs> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!7a0ffa99!RO_0018027>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!7a0ffa99!RO_0018027BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "21"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!7a0ffa99!RO_0018027BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "21"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_b2d5344a> a void:Linkset;
+  void:linkPredicate <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!a571fb71!RO_0018029>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!a571fb71!RO_0018029BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "14"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!a571fb71!RO_0018029BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "14"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_224779d3> a void:Linkset;
+  void:linkPredicate <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!51025b81!SIO_000248>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:triples "699"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!58923839!OAE_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/OAE_0000001>;
+  void:triples "699"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_03f7efa3> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000248>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!12395261!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_29a34191> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000253>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!c507df48!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4534900f!sameAs>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#sameAs>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:triples "53"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!10162b12!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "53"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_1ab37cd1> a void:Linkset;
+  void:linkPredicate <http://www.w3.org/2002/07/owl#sameAs>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C18469>;
+  void:entities "4"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!e4676fce!SIO_000028>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!ed5d85a2!SIO_000216> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!e4676fce!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "8"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "8"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_4611afc7> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000028>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!ed5d85a2!SIO_000216>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!ed5d85a2!SIO_000216BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338>;
+  void:triples "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469BDF_example_graph.ttl!ed5d85a2!SIO_000216BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C25338>;
+  void:triples "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_87fa8d2e> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000216>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bcf73eb0!NCIT_C18469>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C25338>;
+  void:entities "4"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338BDF_example_graph.ttl!c507df48!SIO_000300> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ca0b7ca4!NCIT_C25338BDF_example_graph.ttl!c507df48!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c507df48!SIO_000300BDF_example_graph.ttl!018c8a13!double>;
+  void:triples "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c507df48!SIO_000300BDF_example_graph.ttl!018c8a13!double>
+  a void:Dataset;
+  void_ext:datatype xsd:double .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/OAE_0000001>;
+  void:entities "327"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!b937e5d2!NCIT_C172573>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:triples "705"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!b937e5d2!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:triples "699"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!10162b12!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_46b492bf> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000248>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_690af55a> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000248>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "327"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/PW_0000001>;
+  void:entities "35"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!e4676fce!SIO_000028>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!e4676fce!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!4606947e!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_08428ae1> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000028>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!12395261!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:triples "70"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "47"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_4c73fb46> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000253>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!090d9d57!PW_0000001BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "35"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:entities "6"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001077>;
+  void:entities "27503"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!aea42a32!SIO_000230>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!c507df48!SIO_000300>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!e58b428f!SIO_001403> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!aea42a32!SIO_000230>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000230>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!aea42a32!SIO_000230BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!aea42a32!SIO_000230BDF_example_graph.ttl!4606947e!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_5ae54a53> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000230>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!12395261!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:triples "22"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "22"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_c79da8c7> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000253>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!c507df48!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c507df48!SIO_000300BDF_example_graph.ttl!018c8a13!double>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!e58b428f!SIO_001403>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_001403>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!e58b428f!SIO_001403BDF_example_graph.ttl!961afe3c!SIO_001262>;
+  void:triples "55006"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077BDF_example_graph.ttl!e58b428f!SIO_001403BDF_example_graph.ttl!961afe3c!SIO_001262>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001262>;
+  void:triples "27503"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_fc37990e> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_001403>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!86cca58f!SIO_001077>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001262>;
+  void:entities "17"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "17"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:entities "61"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!7a0ffa99!RO_0018027>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!a571fb71!RO_0018029>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!8c536369!inchi>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!336862c8!smiles>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!88e66dd5!CHEMINF_000140>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!51025b81!SIO_000248>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!c507df48!SIO_000300>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4f75ce12!label>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAs> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!7a0ffa99!RO_0018027>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!7a0ffa99!RO_0018027BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!7a0ffa99!RO_0018027BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_79f0e841> a void:Linkset;
+  void:linkPredicate <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!a571fb71!RO_0018029>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!a571fb71!RO_0018029BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:triples "2"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!a571fb71!RO_0018029BDF_example_graph.ttl!37838012!NCIT_C17021>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C17021>;
+  void:triples "2"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_446656f9> a void:Linkset;
+  void:linkPredicate <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!37838012!NCIT_C17021>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!8c536369!inchi>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/chebi/inchi>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8c536369!inchiBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8c536369!inchiBDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!336862c8!smiles>
+  a void:Dataset;
+  void:property <http://purl.obolibrary.org/obo/chebi/smiles>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!336862c8!smilesBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!336862c8!smilesBDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!88e66dd5!CHEMINF_000140>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/CHEMINF_000140>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!88e66dd5!CHEMINF_000140BDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!88e66dd5!CHEMINF_000140BDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!51025b81!SIO_000248>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!51025b81!SIO_000248BDF_example_graph.ttl!58923839!OAE_0000001>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/OAE_0000001>;
+  void:triples "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_11eeea76> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000248>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!58923839!OAE_0000001>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!12395261!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:triples "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_23c5ddb1> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000253>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!c507df48!SIO_000300>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:triples "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "61"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAs>
+  a void:Dataset;
+  void:property <http://www.w3.org/2002/07/owl#sameAs>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!b937e5d2!NCIT_C172573>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:triples "61"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!b937e5d2!NCIT_C172573>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C172573>;
+  void:triples "53"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038BDF_example_graph.ttl!4534900f!sameAsBDF_example_graph.ttl!10162b12!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "8"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_0bb71831> a void:Linkset;
+  void:linkPredicate <http://www.w3.org/2002/07/owl#sameAs>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b937e5d2!NCIT_C172573>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_e0b2d457> a void:Linkset;
+  void:linkPredicate <http://www.w3.org/2002/07/owl#sameAs>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>
+  a void:Dataset;
+  void:class <http://www.ebi.ac.uk/efo/EFO_0002694>;
+  void:entities "1"^^xsd:long;
+  void:propertyPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!bee9e5e3!identifier>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!39ae1a62!SIO_000229>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!aea42a32!SIO_000230>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!12395261!SIO_000253>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!4f75ce12!label> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!bee9e5e3!identifier>
+  a void:Dataset;
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bee9e5e3!identifierBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bee9e5e3!identifierBDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!4606947e!NCIT_C16612>,
+    <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!961afe3c!SIO_001262>;
+  void:triples "12"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!4606947e!NCIT_C16612>
+  a void:Dataset;
+  void:class <http://purl.obolibrary.org/obo/NCIT_C16612>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!e4676fce!SIO_000028BDF_example_graph.ttl!961afe3c!SIO_001262>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_001262>;
+  void:triples "11"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_d9acf275> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000028>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4606947e!NCIT_C16612>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_3eaed53c> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000028>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!961afe3c!SIO_001262>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!39ae1a62!SIO_000229>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000229>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!39ae1a62!SIO_000229BDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!39ae1a62!SIO_000229BDF_example_graph.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!aea42a32!SIO_000230>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000230>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!aea42a32!SIO_000230BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!aea42a32!SIO_000230BDF_example_graph.ttl!10162b12!SIO_010038>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_010038>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_03deb22b> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000230>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!10162b12!SIO_010038>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!12395261!SIO_000253>
+  a void:Dataset;
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:classPartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!12395261!SIO_000253BDF_example_graph.ttl!704f9700!SIO_000750>
+  a void:Dataset;
+  void:class <http://semanticscience.org/resource/SIO_000750>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#linkset_cab8882a> a void:Linkset;
+  void:linkPredicate <http://semanticscience.org/resource/SIO_000253>;
+  void:subjectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694>;
+  void:objectsTarget <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!704f9700!SIO_000750>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/BDF_example_graph.ttl> .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8e95dc80!EFO_0002694BDF_example_graph.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!labelBDF_example_graph.ttl!4e598fd1!string>;
+  void:triples "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!357839ca!CHEMINF_000406>
+  a void:Dataset;
+  void:class <https://purl.obolibrary.org/CHEMINF_000406>;
+  void:entities "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!5c2f97ea!CHEMINF_000407>
+  a void:Dataset;
+  void:class <https://purl.obolibrary.org/CHEMINF_000407>;
+  void:entities "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!602ad451!GO_0032410>
+  a void:Dataset;
+  void:class <https://purl.obolibrary.org/GO_0032410>;
+  void:entities "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!7a0ffa99!RO_0018027>
+  void:property <http://purl.obolibrary.org/obo/RO_0018027>;
+  void:triples "22"^^xsd:long;
+  void:distinctSubjects "22"^^xsd:long;
+  void:distinctObjects "4"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!a571fb71!RO_0018029>
+  void:property <http://purl.obolibrary.org/obo/RO_0018029>;
+  void:triples "16"^^xsd:long;
+  void:distinctSubjects "16"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!8c536369!inchi>
+  void:property <http://purl.obolibrary.org/obo/chebi/inchi>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!336862c8!smiles>
+  void:property <http://purl.obolibrary.org/obo/chebi/smiles>;
+  void:triples "2"^^xsd:long;
+  void:distinctSubjects "2"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4936d95e!has_gene_template>
+  void:property <http://purl.obolibrary.org/obo/pr#has_gene_template>;
+  void:triples "6"^^xsd:long;
+  void:distinctSubjects "6"^^xsd:long;
+  void:distinctObjects "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!bee9e5e3!identifier>
+  void:property <http://purl.org/dc/elements/1.1/identifier>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!88e66dd5!CHEMINF_000140>
+  void:property <http://semanticscience.org/resource/CHEMINF_000140>;
+  void:triples "1"^^xsd:long;
+  void:distinctSubjects "1"^^xsd:long;
+  void:distinctObjects "1"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!e4676fce!SIO_000028>
+  void:property <http://semanticscience.org/resource/SIO_000028>;
+  void:triples "211"^^xsd:long;
+  void:distinctSubjects "178"^^xsd:long;
+  void:distinctObjects "24"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b5e0467e!SIO_000068>
+  void:property <http://semanticscience.org/resource/SIO_000068>;
+  void:triples "232"^^xsd:long;
+  void:distinctSubjects "17"^^xsd:long;
+  void:distinctObjects "178"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!ed5d85a2!SIO_000216>
+  void:property <http://semanticscience.org/resource/SIO_000216>;
+  void:triples "27507"^^xsd:long;
+  void:distinctSubjects "10"^^xsd:long;
+  void:distinctObjects "27507"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!39ae1a62!SIO_000229>
+  void:property <http://semanticscience.org/resource/SIO_000229>;
+  void:triples "27504"^^xsd:long;
+  void:distinctSubjects "7"^^xsd:long;
+  void:distinctObjects "27504"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!aea42a32!SIO_000230>
+  void:property <http://semanticscience.org/resource/SIO_000230>;
+  void:triples "27504"^^xsd:long;
+  void:distinctSubjects "27504"^^xsd:long;
+  void:distinctObjects "7"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!51025b81!SIO_000248>
+  void:property <http://semanticscience.org/resource/SIO_000248>;
+  void:triples "1410"^^xsd:long;
+  void:distinctSubjects "359"^^xsd:long;
+  void:distinctObjects "359"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!12395261!SIO_000253>
+  void:property <http://semanticscience.org/resource/SIO_000253>;
+  void:triples "268"^^xsd:long;
+  void:distinctSubjects "233"^^xsd:long;
+  void:distinctObjects "8"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c507df48!SIO_000300>
+  void:property <http://semanticscience.org/resource/SIO_000300>;
+  void:triples "27545"^^xsd:long;
+  void:distinctSubjects "27545"^^xsd:long;
+  void:distinctObjects "86"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!a4053c1f!SIO_000671>
+  void:property <http://semanticscience.org/resource/SIO_000671>;
+  void:triples "6"^^xsd:long;
+  void:distinctSubjects "4"^^xsd:long;
+  void:distinctObjects "6"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!e58b428f!SIO_001403>
+  void:property <http://semanticscience.org/resource/SIO_001403>;
+  void:triples "55006"^^xsd:long;
+  void:distinctSubjects "27503"^^xsd:long;
+  void:distinctObjects "18"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!c74e2b73!type>
+  void:property rdf:type;
+  void:triples "28015"^^xsd:long;
+  void:distinctSubjects "28015"^^xsd:long;
+  void:distinctObjects "15"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4f75ce12!label>
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:triples "637"^^xsd:long;
+  void:distinctSubjects "636"^^xsd:long;
+  void:distinctObjects "579"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!b6c99360!subClassOf>
+  void:property <http://www.w3.org/2000/01/rdf-schema#subClassOf>;
+  void:triples "137"^^xsd:long;
+  void:distinctSubjects "137"^^xsd:long;
+  void:distinctObjects "3"^^xsd:long .
+
+<https://BDF_example_graph.example.org/.well-known/void#BDF_example_graph.ttl!4534900f!sameAs>
+  void:property <http://www.w3.org/2002/07/owl#sameAs>;
+  void:triples "114"^^xsd:long;
+  void:distinctSubjects "90"^^xsd:long;
+  void:distinctObjects "90"^^xsd:long .

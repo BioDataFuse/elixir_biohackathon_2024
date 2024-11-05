@@ -1,0 +1,532 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix : <http://www.w3.org/ns/sparql-service-description#> .
+@prefix void_ext: <http://ldf.fi/void-ext#> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<https://chembl_33.0_targetcmpt.example.org/sparql> a :Service;
+  :defaultDataset <https://chembl_33.0_targetcmpt.example.org/sparql#sparql-default-dataset>;
+  :endpoint <https://chembl_33.0_targetcmpt.example.org/sparql>;
+  :resultFormat formats:SPARQL_Results_CSV, formats:SPARQL_Results_JSON, formats:N-Triples,
+    formats:RDF_XML, formats:SPARQL_Results_TSV, formats:Turtle, formats:SPARQL_Results_XML;
+  :supportedLanguage :SPARQL11Query;
+  :feature :UnionDefaultGraph, :BasicFederatedQuery;
+  :availableGraphs <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/sparql#sparql-default-dataset> a :Dataset;
+  :defaultGraph <https://chembl_33.0_targetcmpt.example.org/.well-known/void#sparql-default-graph>;
+  :namedGraph <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#sparql-default-graph>
+  a :Graph;
+  void:triples "1337416"^^xsd:long;
+  void:distinctObjects "737726"^^xsd:long;
+  void_ext:distinctLiterals "614991"^^xsd:long;
+  void_ext:distinctIRIReferenceObjects "122735"^^xsd:long;
+  void:distinctSubjects "133783"^^xsd:long;
+  void_ext:distinctIRIReferenceSubjects "133783"^^xsd:long .
+
+<file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl>
+  a :NamedGraph;
+  :name <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl>;
+  :graph <https://chembl_33.0_targetcmpt.example.org/.well-known/void#_graph_chembl_33.0_targetcmpt.ttl!7dfe2ce2> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#_graph_chembl_33.0_targetcmpt.ttl!7dfe2ce2>
+  a :Graph;
+  void:triples "1337416"^^xsd:long;
+  void:classes "14"^^xsd:long;
+  void:classPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!d678c325!CGDRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!1688af04!GoComponentRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b52f1857!IntactRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0e26f960!InterproRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b2fdc144!PfamRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!03013995!PharmgkbRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6562c947!UniprotRef>;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!feda1d30!description>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74281650!chemblId>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6962d87e!componentType>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b7188ca3!organismName>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!850d7d73!proteinSequence>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!11efc428!targetCmptXref>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8b5a0f5a!taxonomy>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!c74e2b73!type>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!label>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!07d92ae6!altLabel>;
+  void:distinctObjects "614991"^^xsd:long;
+  void_ext:distinctLiterals "614991"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!d678c325!CGDRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#CGDRef>;
+  void:entities "727"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!d678c325!CGDRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!d678c325!CGDRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "727"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#EnzymeClassRef>;
+  void:entities "1448"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "6952"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!1688af04!GoComponentRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoComponentRef>;
+  void:entities "1614"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!1688af04!GoComponentRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!1688af04!GoComponentRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "65058"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoFunctionRef>;
+  void:entities "4072"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "78063"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoProcessRef>;
+  void:entities "11126"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "144961"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b52f1857!IntactRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#IntactRef>;
+  void:entities "6770"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b52f1857!IntactRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b52f1857!IntactRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "6771"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0e26f960!InterproRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#InterproRef>;
+  void:entities "9217"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0e26f960!InterproRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0e26f960!InterproRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "60726"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b2fdc144!PfamRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#PfamRef>;
+  void:entities "3585"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b2fdc144!PfamRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b2fdc144!PfamRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "20232"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!03013995!PharmgkbRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#PharmgkbRef>;
+  void:entities "2747"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!03013995!PharmgkbRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!03013995!PharmgkbRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "2747"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#ProteinDataBankRef>;
+  void:entities "64404"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "74603"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#ReactomeRef>;
+  void:entities "4639"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "32447"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#TargetComponent>;
+  void:entities "11062"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!feda1d30!description>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!74281650!chemblId>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!6962d87e!componentType>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!b7188ca3!organismName>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!850d7d73!proteinSequence>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXref>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!8b5a0f5a!taxonomy>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!4f75ce12!label>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!07d92ae6!altLabel> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!feda1d30!description>
+  a void:Dataset;
+  void:property dcterms:description;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!feda1d30!descriptionchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!feda1d30!descriptionchembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!74281650!chemblId>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#chemblId>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74281650!chemblIdchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74281650!chemblIdchembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!6962d87e!componentType>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#componentType>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6962d87e!componentTypechembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6962d87e!componentTypechembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!b7188ca3!organismName>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#organismName>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b7188ca3!organismNamechembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b7188ca3!organismNamechembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!850d7d73!proteinSequence>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#proteinSequence>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!850d7d73!proteinSequencechembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "10997"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!850d7d73!proteinSequencechembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXref>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:classPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!d678c325!CGDRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!1688af04!GoComponentRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!b52f1857!IntactRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!0e26f960!InterproRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!b2fdc144!PfamRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!03013995!PharmgkbRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRef>,
+    <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!6562c947!UniprotRef>;
+  void:triples "504400"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!d678c325!CGDRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#CGDRef>;
+  void:triples "727"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#EnzymeClassRef>;
+  void:triples "6952"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!1688af04!GoComponentRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoComponentRef>;
+  void:triples "65058"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoFunctionRef>;
+  void:triples "78063"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#GoProcessRef>;
+  void:triples "144961"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!b52f1857!IntactRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#IntactRef>;
+  void:triples "6771"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!0e26f960!InterproRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#InterproRef>;
+  void:triples "60726"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!b2fdc144!PfamRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#PfamRef>;
+  void:triples "20232"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!03013995!PharmgkbRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#PharmgkbRef>;
+  void:triples "2747"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#ProteinDataBankRef>;
+  void:triples "74603"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#ReactomeRef>;
+  void:triples "32447"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#TimbalRef>;
+  void:triples "119"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!11efc428!targetCmptXrefchembl_33.0_targetcmpt.ttl!6562c947!UniprotRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#UniprotRef>;
+  void:triples "10994"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_c7443f81> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!d678c325!CGDRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_8f08b138> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7d3a5851!EnzymeClassRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_89cc3ded> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!1688af04!GoComponentRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_839877b2> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!94aeee92!GoFunctionRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_d232438c> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8d3115c0!GoProcessRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_034a1984> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b52f1857!IntactRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_2690b2bd> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0e26f960!InterproRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_eebe9a40> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b2fdc144!PfamRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_422aca50> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!03013995!PharmgkbRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_41f20aef> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!7c29f26d!ProteinDataBankRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_7d9b1399> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74975dc4!ReactomeRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_d92399cb> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#linkset_2e4eb232> a void:Linkset;
+  void:linkPredicate <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:subjectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponent>;
+  void:objectsTarget <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6562c947!UniprotRef>;
+  void:subset <file:/mnt/e/BioDataFuse/elixir_biohackathon_2024/graph_files/chembl_33.0_targetcmpt.ttl> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!8b5a0f5a!taxonomy>
+  a void:Dataset;
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#taxonomy>;
+  void:triples "22124"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!0b99870b!TargetComponentchembl_33.0_targetcmpt.ttl!07d92ae6!altLabel>
+  a void:Dataset;
+  void:property <http://www.w3.org/2004/02/skos/core#altLabel>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!07d92ae6!altLabelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "106258"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!07d92ae6!altLabelchembl_33.0_targetcmpt.ttl!4e598fd1!string>
+  a void:Dataset;
+  void_ext:datatype xsd:string .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#TimbalRef>;
+  void:entities "44"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!90cd6a7c!TimbalRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "119"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6562c947!UniprotRef>
+  a void:Dataset;
+  void:class <http://rdf.ebi.ac.uk/terms/chembl#UniprotRef>;
+  void:entities "10994"^^xsd:long;
+  void:propertyPartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6562c947!UniprotRefchembl_33.0_targetcmpt.ttl!4f75ce12!label> .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6562c947!UniprotRefchembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  a void:Dataset;
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void_ext:datatypePartition <https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!labelchembl_33.0_targetcmpt.ttl!4e598fd1!string>;
+  void:triples "10994"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!feda1d30!description>
+  void:property dcterms:description;
+  void:triples "11062"^^xsd:long;
+  void:distinctSubjects "11062"^^xsd:long;
+  void:distinctObjects "6885"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!74281650!chemblId>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#chemblId>;
+  void:triples "11062"^^xsd:long;
+  void:distinctSubjects "11062"^^xsd:long;
+  void:distinctObjects "11062"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!6962d87e!componentType>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#componentType>;
+  void:triples "11062"^^xsd:long;
+  void:distinctSubjects "11062"^^xsd:long;
+  void:distinctObjects "2"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!b7188ca3!organismName>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#organismName>;
+  void:triples "11062"^^xsd:long;
+  void:distinctSubjects "11062"^^xsd:long;
+  void:distinctObjects "719"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!850d7d73!proteinSequence>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#proteinSequence>;
+  void:triples "10997"^^xsd:long;
+  void:distinctSubjects "10997"^^xsd:long;
+  void:distinctObjects "10873"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!11efc428!targetCmptXref>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#targetCmptXref>;
+  void:triples "504400"^^xsd:long;
+  void:distinctSubjects "10994"^^xsd:long;
+  void:distinctObjects "121387"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!8b5a0f5a!taxonomy>
+  void:property <http://rdf.ebi.ac.uk/terms/chembl#taxonomy>;
+  void:triples "22124"^^xsd:long;
+  void:distinctSubjects "11062"^^xsd:long;
+  void:distinctObjects "1334"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!c74e2b73!type>
+  void:property rdf:type;
+  void:triples "132449"^^xsd:long;
+  void:distinctSubjects "132449"^^xsd:long;
+  void:distinctObjects "14"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!4f75ce12!label>
+  void:property <http://www.w3.org/2000/01/rdf-schema#label>;
+  void:triples "516940"^^xsd:long;
+  void:distinctSubjects "133783"^^xsd:long;
+  void:distinctObjects "516900"^^xsd:long .
+
+<https://chembl_33.0_targetcmpt.example.org/.well-known/void#chembl_33.0_targetcmpt.ttl!07d92ae6!altLabel>
+  void:property <http://www.w3.org/2004/02/skos/core#altLabel>;
+  void:triples "106258"^^xsd:long;
+  void:distinctSubjects "10994"^^xsd:long;
+  void:distinctObjects "86444"^^xsd:long .
