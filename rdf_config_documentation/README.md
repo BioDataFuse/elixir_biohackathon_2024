@@ -1,6 +1,6 @@
 # Workflow to get RDF-config files from any RDF graph
 
-`RDF-config` is a tool developed by {} that generates generate SPARQL queries, a schema diagram, and files required for Grasp, TogoStanza and ShEx validator.
+`RDF-config` generates generate SPARQL queries, a schema diagram, and files required for Grasp, TogoStanza and ShEx validator.
 
 ## Requirements
 
