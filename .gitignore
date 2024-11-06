@@ -162,3 +162,4 @@ cython_debug/
 #.idea/
 docs/medgen_files/*
 rdf_config_documentation/void-generator/*
+/graph_files
