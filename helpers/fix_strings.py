@@ -24,6 +24,3 @@ def fix_string(ttl_path):
     f.close()
     out_f.close()
 
-    os.remove(ttl_path)
-    os.rename(ttl_path+'_new.ttl',ttl_path)
-
