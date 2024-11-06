@@ -11,7 +11,7 @@ MAX_LINES = 1000
 def fix_string(ttl_path):
 
     f = open(ttl_path,'r')
-    out_f = open(ttl_path+'_new.ttl','w')
+    out_f = open(ttl_path+'_fixed.ttl','w')
 
     lines_passed = 0
 
