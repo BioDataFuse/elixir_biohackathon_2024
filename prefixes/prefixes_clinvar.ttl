@@ -1,0 +1,77 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] sh:declare [
+  sh:prefix "sparql_service" ;
+  sh:namespace "http://www.w3.org/ns/sparql-service-description#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "clinvar" ;
+  sh:namespace "http://purl.jp/bio/10/clinvar/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "dcterms" ;
+  sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "faldo" ;
+  sh:namespace "http://biohackathon.org/resource/faldo#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "formats" ;
+  sh:namespace "http://www.w3.org/ns/formats/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "pav" ;
+  sh:namespace "http://purl.org/pav/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "rdf" ;
+  sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "void" ;
+  sh:namespace "http://rdfs.org/ns/void#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "void_ext" ;
+  sh:namespace "http://ldf.fi/void-ext#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "xsd" ;
+  sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "med2rdf" ;
+  sh:namespace "http://med2rdf.org/ontology/med2rdf#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "prism" ;
+  sh:namespace "http://prismstandard.org/namespaces/1.2/basic/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "bibo" ;
+  sh:namespace "http://purl.org/ontology/bibo/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+  sh:prefix "sio" ;
+  sh:namespace "http://semanticscience.org/resource/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "schema" ;
+    sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyUri
+] .
