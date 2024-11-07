@@ -34,15 +34,12 @@ graph TD
 Generate the VoID file using the following commands:
 ```bash
 wget -P "void-generator" "https://github.com/JervenBolleman/void-generator/releases/download/v0.5/void-generator-0.5-uber.jar"
-path_to_graph_file="your/path"
-path_to_void_file="your/path"
-ttl_file="your_graph.ttl"
 
-java -jar target/void-generator-0.4-SNAPSHOT-uber.jar \
-  --from-test-file=${path_to_graph_file}/${ttl_file}.ttl \
-  -i https://${ttl_file}.example.org/.well-known/void \
-  -r https://${ttl_file}.example.org/sparql \
-  -s ${path_to_void_file}/${ttl_file}-void.ttl
+java -jar void-generator/void-generator-0.5-uber.jar \
+  --from-test-file=GRAPH_PATH.ttl \
+  -i https://TTL_PATH.example.org/.well-known/void \
+  -r https://TTL_PATH.example.org/sparql \
+  -s VOID_FILE_NAME-void.ttl
 ```
 
 3. **Upload VoID RDF Data:**  
@@ -56,7 +53,7 @@ java -jar target/void-generator-0.4-SNAPSHOT-uber.jar \
    * Edit the `Cross-Origin Resource Sharing` input to `*` and save the edit.
 
 5. **Create the SHACL Prefixes file:**  
-   Create a preliminary `.shacl` file that lists prefixes for all namespaces in the dataset, as the `rdf-config` generator depends on these prefixes to label nodes. This file serves as a very basic verison of SHACL file. 
+   Create a preliminary `.shacl` file that lists prefixes for all namespaces in the VoID file, as the `rdf-config` generator depends on these prefixes to label nodes. This file serves as a very basic verison of SHACL file. 
    
    The graph for SHACL prefixes should look like the example below:
    
@@ -76,6 +73,11 @@ java -jar target/void-generator-0.4-SNAPSHOT-uber.jar \
       sh:prefix "sparql_service" ;
       sh:namespace "http://www.w3.org/ns/sparql-service-description#"^^xsd:anyURI
     ] .
+
+    [] sh:declare [
+        sh:prefix "obo" ;
+        sh:namespace "<http://purl.obolibrary.org/obo"^^xsd:anyURI
+    ] .
     
     [] sh:declare [
       sh:prefix "clinvar" ;
@@ -91,14 +93,21 @@ java -jar target/void-generator-0.4-SNAPSHOT-uber.jar \
 6. **Upload the SHACL Prefixes file to Virtuoso:** 
     Upload the SHACL file the same way as you did the graph file previously. 
 
-8. **Run RDF-Config server `sh serve_rdf_config.sh`:**  
-   This script deploys [a local RDF config tool](https://github.com/JervenBolleman/void-generator/blob/main/sparql/test-rdf-config.html) interface accessible at your local port (Eg. `http://0.0.0.0:8000/sparql/test-rdf-config.html`), allowing you to generate RDF configuration files based on the Virtuoso SPARQL endpoint.
+8. **Run RDF-Config server `sh run.sh`:**  
+   This script deploys [a local RDF config tool](https://github.com/JervenBolleman/void-generator/blob/main/sparql/test-rdf-config.html) interface accessible at your local port (Eg. `http://0.0.0.0:8000/test-rdf-config.html`), allowing you to generate RDF configuration files based on the Virtuoso SPARQL endpoint.
 
 9. **Configure RDF Generator (SPARQL Endpoint):**  
    In the RDF config tool (`test-rdf-config.html`), set the endpoint to `http://localhost:8899/sparql/` to generate the configuration files correctly.
 
+   Save the two outputs (model.yaml, prefixes.yaml) in the different yaml in the rdf-config directory.
+
 10. **Retrieve Tree Structure:**  
-   Use the command:
+   Follow the following commands line-by-line to get the schema from RDF-Config.
+
+   ```bash
+   cd rdf-config
+   bundle install
+   ```
 
    ```bash
    rdf-config --config . --senbero

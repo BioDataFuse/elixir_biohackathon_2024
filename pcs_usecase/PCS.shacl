@@ -2,41 +2,66 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 [] sh:declare [
-    sh:prefix "dc" ;
-    sh:namespace "http://purl.org/dc/elements/1.1/"^^xsd:anyURI
+    sh:prefix "sparql_service" ;
+    sh:namespace "http://www.w3.org/ns/sparql-service-description#"^^xsd:anyURI
 ] .
 
 [] sh:declare [
-    sh:prefix "ns1" ;
-    sh:namespace "http://purl.obolibrary.org/obo/pr#"^^xsd:anyURI
+    sh:prefix "rdf" ;
+    sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI
 ] .
 
 [] sh:declare [
-    sh:prefix "ns2" ;
-    sh:namespace "http://purl.obolibrary.org/obo/chebi/"^^xsd:anyURI
+    sh:prefix "void" ;
+    sh:namespace "http://rdfs.org/ns/void#"^^xsd:anyURI
 ] .
 
 [] sh:declare [
-    sh:prefix "obo" ;
-    sh:namespace "http://purl.obolibrary.org/obo/"^^xsd:anyURI
+    sh:prefix "void_ext" ;
+    sh:namespace "http://ldf.fi/void-ext#"^^xsd:anyURI
 ] .
 
 [] sh:declare [
-    sh:prefix "owl" ;
-    sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI
+    sh:prefix "formats" ;
+    sh:namespace "http://www.w3.org/ns/formats/"^^xsd:anyURI
 ] .
 
 [] sh:declare [
-    sh:prefix "rdfs" ;
-    sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI
-] .
-
-[] sh:declare [
-    sh:prefix "sio" ;
-    sh:namespace "http://semanticscience.org/resource/"^^xsd:anyURI
+    sh:prefix "pav" ;
+    sh:namespace "http://purl.org/pav/"^^xsd:anyURI
 ] .
 
 [] sh:declare [
     sh:prefix "xsd" ;
     sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "dcterms" ;
+    sh:namespace "http://purl.org/dc/terms/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "obo" ;
+    sh:namespace "<http://purl.obolibrary.org/obo/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "ns1" ;
+    sh:namespace "<http://purl.obolibrary.org/obo/pr#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "ns2" ;
+    sh:namespace "<http://purl.obolibrary.org/obo/chebi/"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "owl" ;
+    sh:namespace "<http://www.w3.org/2002/07/owl#"^^xsd:anyURI
+] .
+
+[] sh:declare [
+    sh:prefix "sio" ;
+    sh:namespace "<http://semanticscience.org/resource/"^^xsd:anyURI
 ] .

@@ -161,6 +161,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 docs/medgen_files/*
-rdf_config/void-generator/*
 /graph_files
-rdf_config/virtuoso/*
+void2rdf-config/void-generator/*
+void2rdf-config/virtuoso/*
+void2rdf-config/rdf-files/*
