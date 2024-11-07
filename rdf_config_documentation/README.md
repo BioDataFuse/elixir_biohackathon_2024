@@ -1,7 +1,5 @@
 # Workflow to get RDF-config files from any RDF graph
 
-`RDF-config` generates generate SPARQL queries, a schema diagram, and files required for Grasp, TogoStanza and ShEx validator.
-
 ## Requirements
 
 - Docker
