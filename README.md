@@ -34,11 +34,15 @@ graph TD
 Generate the VoID file using the following commands:
 ```bash
 wget -P "void-generator" "https://github.com/JervenBolleman/void-generator/releases/download/v0.5/void-generator-0.5-uber.jar"
-java -jar void-generator/void-generator-0.5-uber.jar \
-  --from-test-file=${path_to_graph_file_ttl_file}.ttl \
-  -i https://${new_ttl_file}.example.org/.well-known/void \
-  -r https://${new_ttl_file}.example.org/sparql \
-  -s ${path_to_void_file_ttl_file}-void.ttl
+path_to_graph_file="your/path"
+path_to_void_file="your/path"
+ttl_file="your_graph.ttl"
+
+java -jar target/void-generator-0.4-SNAPSHOT-uber.jar \
+  --from-test-file=${path_to_graph_file}/${ttl_file}.ttl \
+  -i https://${ttl_file}.example.org/.well-known/void \
+  -r https://${ttl_file}.example.org/sparql \
+  -s ${path_to_void_file}/${ttl_file}-void.ttl
 ```
 
 3. **Upload VoID RDF Data:**  
