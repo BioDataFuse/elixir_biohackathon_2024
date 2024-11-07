@@ -1,6 +1,6 @@
 # Check if the current folder name is rdf_config_documentation
-if [ "$(basename "$PWD")" != "rdf_config_documentation" ]; then
-  echo "Error: Current folder name is not rdf_config_documentation."
+if [ "$(basename "$PWD")" != "rdf_config" ]; then
+  echo "Error: Current folder name is not rdf_config."
   exit 1
 fi
 
