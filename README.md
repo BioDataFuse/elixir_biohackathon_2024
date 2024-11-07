@@ -29,8 +29,19 @@ graph TD
 
 2. **Access Virtuoso Conductor (`http://localhost:8899/`):**  
    Login at this address to manage the Virtuoso instance and go to the `Conductor` tab. Default credentials are `dba` with `CONDUCTOR_PASSWORD`. 
-   
-3. **Upload RDF Data:**  
+
+3. **Generate VoID file**
+Generate the VoID file using the following commands:
+```bash
+wget -P "void-generator" "https://github.com/JervenBolleman/void-generator/releases/download/v0.5/void-generator-0.5-uber.jar"
+java -jar void-generator/void-generator-0.5-uber.jar \
+  --from-test-file=${path_to_graph_file_ttl_file}.ttl \
+  -i https://${new_ttl_file}.example.org/.well-known/void \
+  -r https://${new_ttl_file}.example.org/sparql \
+  -s ${path_to_void_file_ttl_file}-void.ttl
+```
+
+3. **Upload VoID RDF Data:**  
    Use this interface to upload RDF graphs and manage namespaces. To do so, go to the `Linked Data` tab and click the `Quad Store Upload`. Upload the turtle file and add a custom IRI (eg. http://localhost:8899/sparql/).
 
 4. **Allow CORS:**  
@@ -75,9 +86,6 @@ graph TD
 
 6. **Upload the SHACL Prefixes file to Virtuoso:** 
     Upload the SHACL file the same way as you did the graph file previously. 
-
-7. **Generate VoID file**
-
 
 8. **Run RDF-Config server `sh serve_rdf_config.sh`:**  
    This script deploys [a local RDF config tool](https://github.com/JervenBolleman/void-generator/blob/main/sparql/test-rdf-config.html) interface accessible at your local port (Eg. `http://0.0.0.0:8000/sparql/test-rdf-config.html`), allowing you to generate RDF configuration files based on the Virtuoso SPARQL endpoint.
