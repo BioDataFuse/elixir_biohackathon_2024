@@ -17,7 +17,7 @@ To get the VoID generator and RDF-Config, you can run the bash script using `` c
 
 ```mermaid
 graph TD
-    A [Go to `rdf_config` directory] --> |docker compose up -d| B[Start Virtuoso Triplestore and load dataset]
+    A[Go to rdf_config directory] --> |docker compose up -d| B[Start Virtuoso Triplestore and load dataset]
     B --> C[Create SHACL Prefix Set and Upload to Virtuoso]
     C --> |run *serve_rdf_config.sh* and go to 0.0.0.0:8000/sparql/test-rdf-config.html| D[Generate RDF Config Files by pointing to localhost:8899/sparql]
     D --> |run *rdf-config --config . --senbero*| E[Retrieve tree]
